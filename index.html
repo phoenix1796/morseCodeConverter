@@ -8,20 +8,72 @@
     <title>morseCode Converter</title>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="sae.css">
 </head>
-
+<style>
+    #mcode_form{
+        margin:auto 0;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    body{
+        height:100vh;
+        box-sizing: border-box;
+        margin:0;
+        background-color: #7289da;
+    }
+    #TXT, #MORSE{
+        width:96vmin;
+        margin-bottom:1vmax;
+    }
+    #TXT{
+        height: 15vmax;
+    }
+    #MORSE{
+        height: 25vmax;
+    }
+    .txtarea{
+        border: none;
+        border-radius: 1vmax;
+        background-color:#2c2f33;
+        color:#ffffff;
+        padding: 2vmax;
+        box-sizing: border-box;
+        font-size: 5vmin;
+    }
+    .title{
+        text-align: center;
+        font-size: 10vmin;
+    }
+    @media (min-width: 768px ) {
+        .txtarea {
+            font-size: 2vmin;
+        }
+        .title{
+            margin-bottom: 1vmax;
+            font-size: 3vmin;
+        }
+    }
+    @media (orientation: landscape) and (max-width: 768px;) {
+        .title{
+            font-size: 7vmin;
+        }
+    }
+</style>
 <body>
+    <h2 class="title">Morsinator</h2>
     <form id="mcode_form" onsubmit="return false">
         <div class="form-group">
-            <textarea placeholder="ASCII" cols="50" rows="4" class="form-control" id="TXT"></textarea>
-        </div>
-        <br><br>
-        <div class="form-group">
-            <textarea placeholder="MORSE" cols="50" rows="4" class="form-control" id="MORSE"></textarea>
+            <textarea  placeholder="ASCII" rows="4" class="form-control txtarea" id="TXT"></textarea>
         </div>
         
-        <br>
+        <div class="form-group">
+            <textarea placeholder="MORSE" rows="4" class="form-control txtarea" id="MORSE"></textarea>
+        </div>
     </form>
 </body>
+<script src="dist/clipboard.min.js"></script>
 <script src="index.js"></script>
 </html>
