@@ -1,0 +1,71 @@
+#mcode_form{
+    margin:auto 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+body{
+    height:100vh;
+    box-sizing: border-box;
+    margin:0;
+    background-color: #7289da;
+    overflow: hidden;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#TXT, #MORSE{
+    width:96vmin;
+}
+#TXT{
+    height: 15vmax;
+}
+#MORSE{
+    height: 25vmax;
+}
+.txtarea{
+    border: none;
+    border-radius: 1vmax;
+    background-color:#2c2f33;
+    color:#ffffff;
+    padding: 2vmax;
+    box-sizing: border-box;
+    font-size: 5vmin;
+}
+.title{
+    text-align: center;
+    font-size: 10vmin;
+    color:#2c2f33;
+}
+.floor{
+    box-sizing: border-box;
+    width:100%;
+    margin:0;
+    position: fixed;
+    bottom:0;
+    height:10vmin;
+    z-index: -99;
+}
+.grass{
+    position: absolute;
+    background:url("grass.png");
+    height:50px;
+    width:100%;
+}
+.ground{
+    background: url("ground.png");
+    height:100%;
+}
+@media (min-width: 768px ) {
+    .txtarea {
+        font-size: 2vmin;
+    }
+    .title{
+        margin-bottom: 1vmax;
+        font-size: 3vmin;
+    }
+}
+@media (orientation: landscape) and (max-width: 768px) {
+    .title{
+        font-size: 7vmin;
+    }
+}
