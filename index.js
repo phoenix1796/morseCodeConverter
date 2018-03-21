@@ -185,6 +185,10 @@
             'txt':'\''
         },
         {
+            'morse':'.----.',
+            'txt':'\"'
+        },
+        {
             'morse':'-..-.',
             'txt':'/'
         },
@@ -195,29 +199,34 @@
         {
             'morse':'-.--.-',
             'txt':'}'
+        },
+        {
+            'morse':'\n',
+            'txt':'\n'
         }
     ]
+    var NOT_DEF = "|UNDEF|";
     function morseToTxt(mCode){ 
         var ary=   morseCodes.filter(function(element){
             if(element.morse==mCode)
-            return true;
+                return true;
             else
-            return false;
+                return false;
         })
         if(ary.length<1)
-        return "UNDEF"
+            return NOT_DEF
         
         return ary[0].txt
     }
     function txtToMorse(txtCode){
         var ary=   morseCodes.filter(function(element){
             if(element.txt==txtCode)
-            return true;
+                return true;
             else
-            return false;
+                return false;
         })
         if(ary.length<1)
-        return "|UNDEF|"
+            return NOT_DEF
         
         return ary[0].morse
     }
@@ -243,7 +252,10 @@
         $("#M2T").click(convMorse)
         $("#T2M").click(convTxt)
         $("#MORSE").on("input", function(data){
-            convMorse()
+            if(data.currentTarget.value!='')
+                convMorse()
+            else
+                $("#TXT").val("");
         })
         $("#TXT").on("input", function(data){
             convTxt()

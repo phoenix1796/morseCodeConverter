@@ -23,10 +23,11 @@
         box-sizing: border-box;
         margin:0;
         background-color: #7289da;
+        overflow: hidden;
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     }
     #TXT, #MORSE{
         width:96vmin;
-        margin-bottom:1vmax;
     }
     #TXT{
         height: 15vmax;
@@ -46,6 +47,7 @@
     .title{
         text-align: center;
         font-size: 10vmin;
+        color:#2c2f33;
     }
     @media (min-width: 768px ) {
         .txtarea {
@@ -61,6 +63,27 @@
             font-size: 7vmin;
         }
     }
+
+
+    .floor{
+        box-sizing: border-box;
+        width:100%;
+        margin:0;
+        position: fixed;
+        bottom:0;
+        height:10vmin;
+        z-index: -99;
+    }
+    .grass{
+        position: absolute;
+        background:url("grass.png");
+        height:50px;
+        width:100%;
+    }
+    .ground{
+        background: url("ground.png");
+        height:100%;
+    }
 </style>
 <body>
     <h2 class="title">Morsinator</h2>
@@ -73,6 +96,11 @@
             <textarea placeholder="MORSE" rows="4" class="form-control txtarea" id="MORSE"></textarea>
         </div>
     </form>
+    <div class="floor">
+        <div class="grass"></div>
+        <div class="ground">
+        </div>
+    </div>
 </body>
 <script src="dist/clipboard.min.js"></script>
 <script src="index.js"></script>
